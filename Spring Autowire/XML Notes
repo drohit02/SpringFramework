@@ -1,0 +1,1 @@
+When we use autowire="byName" and autowire="constructor" so in one of the bean we have to use "ref" attribute to solve confusion

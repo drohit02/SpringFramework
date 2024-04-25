@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config/>
+	<bean class="com.beans.EmployeeBean" id="emp">
+		<property name="empId" value="18"/>
+		<property name="empName" value="Virat kohli"/>
+		<property name="empAddress" value="Delhi"/>
+	</bean>
+	
+<!--	<bean class="com.beans.Location">
+		<property name="lane" value="Taj Recidency"/>
+		<property name="city" value="Chadani Chowak"/>
+	</bean>
+	-->
+	<bean class="com.beans.Location">
+		<property name="lane" value="Raj Recidency"/>
+		<property name="city" value="Mari Chowak"/>
+	</bean>
+</beans>

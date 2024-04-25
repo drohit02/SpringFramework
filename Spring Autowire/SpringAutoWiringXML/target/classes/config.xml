@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+                           
+           
+     <!-- Autowire using byName-->
+     <!-- Here empAddress is filed member of the EmployeeBean,Hence autowire="byName injected Address bean to this bean"-->                      
+	<bean class="com.beans.EmployeeBean" id = "empBean1" autowire="byName">
+		<property name="empId" value="18"/>
+		<property name="empName" value="Virat Kohli"/>
+	</bean>
+	<bean class="com.beans.Address" name="empAddress">
+		<property name="lane" value="Chadani Chowk"/>
+		<property name="city" value="Delhi"/>
+	</bean>	
+	
+	
+	
+	<!-- Autowire using byType-->
+ <!--	<bean class="com.beans.EmployeeBean" id="empBean2" autowire="byType">
+		<property name="empId" value="47"/>
+		<property name="empName" value="Sachin"/>
+	</bean>
+	<bean class="com.beans.Address" name="address1">
+		<property name="lane" value="Bandra"/>
+		<property name="city" value="Mumbai"/>
+	</bean>
+	-->
+	
+	<bean class="com.beans.EmployeeBean" id="empBean3" autowire="constructor">
+		<property name="empId" value="71"/>
+		<property name="empName" value="VVS Laxman"/>
+		<property name="empAddress" ref="empAddress1"/>
+	</bean>
+	<bean class="com.beans.Address" id = "empAddress1">
+		<constructor-arg name="lane" value="Bandra"/>
+		<constructor-arg name="city" value="Mumbai"/>
+	</bean>
+
+</beans>
